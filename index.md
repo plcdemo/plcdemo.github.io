@@ -2,45 +2,120 @@
 layout: default
 ---
 
-![Banner](assets/biscuit.png)
+# **Demo of SDNet**
 
+## **1. Test Set Samples**
 
-**[Biscuit](http://sblisesivdin.github.io/biscuit)** is a single-page responsive Jekyll theme. This is the most simple and still-good-looking Jekyll theme that you can find. 
+### Sample 1
 
-## Usage
+&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**UNet + I-DTLN**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
 
-You can use this theme with [Jekyll](http://jekyllrb.com/) or you can simply use it with [Github Pages](https://pages.github.com).
-For local usage just download [Jekyll](http://jekyllrb.com/), use installation guide for more. You can download latest Biscuit from [its Github repository](https://github.com/sblisesivdin/biscuit).
+<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/1.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/1.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/1.wav" type="audio/wav"></audio>
 
-If you prefer to use Github Pages, you do not need to download it, upload files to a new repository...etc., just [fork](https://docs.github.com/en/get-starter/quickstart/fork-a-repo) and use it.
+&emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
 
-### Files
+<audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/1.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/1.wav" type="audio/wav"></audio>
 
-* `_config.yml`            : Main configuration file.
-* `index.md`               : Website page (for now, this page).
-* `_includes/head.html`    : File to add custom code to `<head>` section.
-* `_includes/scripts.html` : File to add custom code before `</body>`. You can change footer at here.
-* `_sass` folder           : Related scss files can be found at this folder.
-* `css/main.csss`          : Main scss file.
-* `README.md`              : A simple readme file.
+### Sample 2
 
-## Example tag usage
+&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**UNet + I-DTLN**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
 
-## Header 1
-### Header 2
-#### Header 3
-**bold**
-*italic*
+<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/2.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/2.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/2.wav" type="audio/wav"></audio>
 
-> blockquotes
+&emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
 
-~~~python
-import os,time
-print ("Biscuit")
-~~~
+<audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/2.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/2.wav" type="audio/wav"></audio>
 
-## Licence and Author Information
+### Sample 3
 
-Biscuit is derived from currently deprecated theme [Solo](http://github.com/chibicode/solo). The development of Biscuit is maintained by [Sefer Bora Lisesivdin](https://lrgresearch.org/bora).
+&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**UNet + I-DTLN**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
 
-Biscuit and the previous code where Biscuit is derived are distributed with [MIT license](https://github.com/sblisesivdin/biscuit/blob/gh-pages/LICENSE).
+<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/3.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/3.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/3.wav" type="audio/wav"></audio>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
+
+<audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/3.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/3.wav" type="audio/wav"></audio>
+
+### Sample 4
+
+&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**UNet + I-DTLN**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
+
+<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/4.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/4.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/4.wav" type="audio/wav"></audio>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
+
+<audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/4.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/4.wav" type="audio/wav"></audio>
+
+### Sample 5
+
+&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**UNet + I-DTLN**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
+
+<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/5.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/5.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/5.wav" type="audio/wav"></audio>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
+
+<audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/5.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/5.wav" type="audio/wav"></audio>
+
+## **2. Real World Samples**
+
+In this part, we selected some old speech to repair their quality. Some samples are below.
+
+### Sample 1
+
+" Science has profoundly altered the conditions of man's life both materially and in ways of the spirit as well. " - J. Robert Oppenheimer
+
+&emsp;&emsp;&emsp;&emsp;**Source**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Output**
+
+<audio controls="" style="width: 250px; height: 50px"><source src="data/realworld/1.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/realworld/1_pr.wav" type="audio/wav"></audio>
+
+Spectrogram: 
+
+<img src="img\real_1.png" alt="real_1" style="zoom: 50%;" /><img src="img\real_1_pr.png" alt="real_1_pr" style="zoom: 50%;" />
+
+### Sample 2
+
+" If someone, again who hadn't been here before, asked you ‘ Is it safe to come to Northern Ireland? ’ What would you say? " - From an old interview
+
+&emsp;&emsp;&emsp;&emsp;**Source**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Output**
+
+<audio controls="" style="width: 250px; height: 50px"><source src="data/realworld/2.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/realworld/2_pr.wav" type="audio/wav"></audio>
+
+Spectrogram: 
+
+<img src="img\real_8.png" alt="real_8" style="zoom:50%;" /><img src="img\real_8_pr.png" alt="real_8_pr" style="zoom:50%;" />
+
+### Sample 3
+
+" Begin the day with Able Mabel. She'll wake you at your preset time. " - From an old TV advertisement
+
+&emsp;&emsp;&emsp;&emsp;**Source**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Output**
+
+<audio controls="" style="width: 250px; height: 50px"><source src="data/realworld/3.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/realworld/3_pr.wav" type="audio/wav"></audio>
+
+Spectrogram:
+
+<img src="img\real_9.png" alt="real_9" style="zoom: 50%;" /><img src="img\real_9_pr.png" alt="real_9_pr" style="zoom: 50%;" />
+
+## **3. Settings of Each Layer**
+
+Layers are listed in order of precedence, from top to bottom. The last dimension and batchsize dimension may be different based on the duration of input speech and batchsize.
+
+<img src="img\Network Settings.PNG" alt="Network Settings" style="zoom:60%;" />
+
+## **4. Acknowledgement**
+
+Our work was built based on AERO (<https://github.com/slp-rl/aero>). 
+
+The following repositories also help us a lot.
+
+<https://github.com/zkx06111/WSRGlow>
+
+<https://github.com/maum-ai/nuwave2>
+
+<https://github.com/haoheliu/voicefixer>
+
+<https://github.com/lhwcv/DTLN_pytorch>
+
+<https://github.com/ncarraz/AFILM>
+
+Thanks for all these great work.
