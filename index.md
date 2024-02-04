@@ -2,120 +2,172 @@
 layout: default
 ---
 
-# **Demo of SDNet**
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
+  <title>Frame-Wise Breath Detection with Self-Training for Enhanced Breath Naturalness in Text-to-Speech</title>
+  <style>
+    table {
+        border-collapse: collapse; /* 移除或减少边框间距 */
+        table-layout: fixed; /* 固定布局使列宽均匀 */
+        width: 100%; /* 可以调整表格的总宽度 */
+    }
+    th {
+        padding: 5px; /* 减少单元格内边距 */
+        text-align: center; /* 可选：居中对齐内容 */
+    }
+    td {
+        padding: 5px; /* 减少单元格内边距 */
+        text-align: left; /* 可选：居中对齐内容 */
+    }
+    audio {
+        width: 100%; /* 让音频播放器填满单元格 */
+    }
+  </style>
+  <style>
+    .two-column-table {
+        border-collapse: collapse;
+        table-layout: fixed;
+        width: 50%; /* 新的两列表格总宽度为原来的一半 */
+    }
+    .two-column-table th {
+        padding: 5px;
+        text-align: center; /* 根据需要可以居中或靠左 */
+    }
+    .two-column-table td {
+        padding: 5px;
+        text-align: left; /* 根据需要可以居中或靠左 */
+    }
+    audio {
+        width: 100%;
+    }
+  </style>
+  <style>
+    .three-column-table {
+        border-collapse: collapse;
+        table-layout: fixed;
+        width: 75%;
+    }
+    .three-column-table th {
+        padding: 5px;
+        text-align: center;
+    }
+    .three-column-table td {
+        padding: 5px;
+        text-align: left;
+    }
+    audio {
+        width: 100%;
+    }
+  </style>
+  </head>
+<hr/>
+<p><font size='4', face="Arial">Please use headphones to listen to these utterances.</font></p>
+<p></p>                         
 
-## **1. Test Set Samples**
+<p><font size='4', face="Arial">The training speech data includes the breath sounds of these speakers.</font></p>
+<table >
+  <tbody>
+    <tr>
+      <th><font size='4' face="Arial"><b>Groud truth</b></font></th>
+      <th><font size='4' face="Arial"><b>VITS</b></font></th>
+      <th><font size='4' face="Arial"><b>VITS w/ baseline</b></font></th>
+      <th><font size='4' face="Arial"><b>VITS w/ proposed</b></font></th>
+    </tr>
+    <tr>
+      <td colspan="4"><span><font size='4' face="Arial">1. (speaker id: 1678) Partly, said Margaret sighing, because it is so very different from Helstone.</font></span></td>
+    </tr>
+    <tr>
+      <td><audio controls="controls"><source src="audio/1_gt_1678_142279_000042_000000_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_origin_1678_142279_000042_000000_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_baseline_1678_142279_000042_000000_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_proposed_1678_142279_000042_000000_0.wav"></audio></td>
+    </tr>
+    <tr><td colspan="4"><span><font size='4', face="Arial">2. (speaker id: 1649) When he ended they applauded his speech mildly; but it was chiefly for the reason that he had spoken so forcibly and well.</font></span></td></tr>
+    <tr>
+      <td><audio controls="controls"><source src="audio/1_gt_1649_68762_000050_000000_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_origin_1649_68762_000050_000000_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_baseline_1649_68762_000050_000000_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_proposed_1649_68762_000050_000000_0.wav"></audio></td>
+    </tr>
+    <tr><td colspan="4"><span><font size='4', face="Arial">3. (speaker id: 716) As I stared at them, they met my gaze; and then first one and then another turned away from my direct stare, and looked at me in an odd furtive manner.</font></span></td></tr>
+    <tr>
+      <td><audio controls="controls"><source src="audio/1_gt_716_129582_000005_000003_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_origin_716_129582_000005_000003_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_baseline_716_129582_000005_000003_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_proposed_716_129582_000005_000003_0.wav"></audio></td>
+    </tr>
+    <tr><td colspan="4"><span><font size='4', face="Arial">4. (speaker id: 6139) Number one doesn't sound very inviting said rob with a sour grimace. Who is your number two? Lloyd held out the second envelope.</font></span></td></tr>
+    <tr>
+      <td><audio controls="controls"><source src="audio/1_gt_6139_58868_000045_000000_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_origin_6139_58868_000045_000000_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_baseline_6139_58868_000045_000000_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_proposed_6139_58868_000045_000000_0.wav"></audio></td>
+    </tr>
+    <tr><td colspan="4"><span><font size='4', face="Arial">5. (speaker id: 3118) After the most accurate examination of which I am capable, I venture to affirm, that the rule here holds without any exception.</font></span></td></tr>
+    <tr>
+      <td><audio controls="controls"><source src="audio/1_gt_3118_5912_000008_000002_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_origin_3118_5912_000008_000002_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_baseline_3118_5912_000008_000002_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_proposed_3118_5912_000008_000002_0.wav"></audio></td>
+    </tr>
+    <tr><td colspan="4"><span><font size='4', face="Arial">6. (speaker id: 8718) Josiah he stayed with her, an between him an mord, they helped her along, but I had to git out and scratch for a livin.</font></span></td></tr>
+    <tr>
+      <td><audio controls="controls"><source src="audio/1_gt_8718_295445_000026_000001_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_origin_8718_295445_000026_000001_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_baseline_8718_295445_000026_000001_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/1_proposed_8718_295445_000026_000001_0.wav"></audio></td>
+    </tr>
+  </tbody>
+</table>
 
-### Sample 1
+<p></p>
 
-&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**UNet + I-DTLN**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
+<p><font size='4', face="Arial">The training speech data does not include the breath sounds of the two speakers.</font></p>
+<p><font size='4', face="Arial">VITS with the baseline model can not synthesize the breath sounds of speaker 3630.</font></p>
+<p><font size='4', face="Arial">We use "<" as the breath mark within the text. The texts are from the test set of other speakers (breath detection here is finished by the propoed model).</font></p>
+<table class="two-column-table">
+  <tbody>
+    <tr>
+      <th><font size='4' face="Arial"><b>VITS w/ baseline</b></font></th>
+      <th><font size='4' face="Arial"><b>VITS w/ proposed</b></font></th>
+    </tr>
+    <tr><td colspan="2"><span><font size='4', face="Arial">1. (speaker id: 3630) At that moment the small window in the lodge opened < a hand passed through < seized the key and the candlestick < and lighted the taper.</font></span></td></tr>
+    <tr>
+      <td><audio controls="controls"><source src="audio/2_baseline_1365_134830_000014_000000_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/2_proposed_1365_134830_000014_000000_0.wav"></audio></td>
+    </tr>
+    <tr><td colspan="2"><span><font size='4', face="Arial">2. (speaker id: 1811) But when his mother assures him that the stars always appear so to her < and he turns to look in her face he says < why mother < how beautiful you look.</font></span></td></tr>
+    <tr>
+      <td><audio controls="controls"><source src="audio/2_baseline_4427_20023_000003_000003_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/2_proposed_4427_20023_000003_000003_0.wav"></audio></td>
+    </tr>
+  </tbody>
+</table>
 
-<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/1.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/1.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/1.wav" type="audio/wav"></audio>
+<p></p>
 
-&emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
-
-<audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/1.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/1.wav" type="audio/wav"></audio>
-
-### Sample 2
-
-&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**UNet + I-DTLN**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
-
-<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/2.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/2.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/2.wav" type="audio/wav"></audio>
-
-&emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
-
-<audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/2.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/2.wav" type="audio/wav"></audio>
-
-### Sample 3
-
-&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**UNet + I-DTLN**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
-
-<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/3.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/3.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/3.wav" type="audio/wav"></audio>
-
-&emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
-
-<audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/3.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/3.wav" type="audio/wav"></audio>
-
-### Sample 4
-
-&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**UNet + I-DTLN**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
-
-<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/4.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/4.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/4.wav" type="audio/wav"></audio>
-
-&emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
-
-<audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/4.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/4.wav" type="audio/wav"></audio>
-
-### Sample 5
-
-&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**UNet + I-DTLN**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
-
-<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/5.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/5.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/5.wav" type="audio/wav"></audio>
-
-&emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
-
-<audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/5.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/5.wav" type="audio/wav"></audio>
-
-## **2. Real World Samples**
-
-In this part, we selected some old speech to repair their quality. Some samples are below.
-
-### Sample 1
-
-" Science has profoundly altered the conditions of man's life both materially and in ways of the spirit as well. " - J. Robert Oppenheimer
-
-&emsp;&emsp;&emsp;&emsp;**Source**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Output**
-
-<audio controls="" style="width: 250px; height: 50px"><source src="data/realworld/1.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/realworld/1_pr.wav" type="audio/wav"></audio>
-
-Spectrogram: 
-
-<img src="img\real_1.png" alt="real_1" style="zoom: 50%;" /><img src="img\real_1_pr.png" alt="real_1_pr" style="zoom: 50%;" />
-
-### Sample 2
-
-" If someone, again who hadn't been here before, asked you ‘ Is it safe to come to Northern Ireland? ’ What would you say? " - From an old interview
-
-&emsp;&emsp;&emsp;&emsp;**Source**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Output**
-
-<audio controls="" style="width: 250px; height: 50px"><source src="data/realworld/2.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/realworld/2_pr.wav" type="audio/wav"></audio>
-
-Spectrogram: 
-
-<img src="img\real_8.png" alt="real_8" style="zoom:50%;" /><img src="img\real_8_pr.png" alt="real_8_pr" style="zoom:50%;" />
-
-### Sample 3
-
-" Begin the day with Able Mabel. She'll wake you at your preset time. " - From an old TV advertisement
-
-&emsp;&emsp;&emsp;&emsp;**Source**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Output**
-
-<audio controls="" style="width: 250px; height: 50px"><source src="data/realworld/3.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/realworld/3_pr.wav" type="audio/wav"></audio>
-
-Spectrogram:
-
-<img src="img\real_9.png" alt="real_9" style="zoom: 50%;" /><img src="img\real_9_pr.png" alt="real_9_pr" style="zoom: 50%;" />
-
-## **3. Settings of Each Layer**
-
-Layers are listed in order of precedence, from top to bottom. The last dimension and batchsize dimension may be different based on the duration of input speech and batchsize.
-
-<img src="img\Network Settings.PNG" alt="Network Settings" style="zoom:60%;" />
-
-## **4. Acknowledgement**
-
-Our work was built based on AERO (<https://github.com/slp-rl/aero>). 
-
-The following repositories also help us a lot.
-
-<https://github.com/zkx06111/WSRGlow>
-
-<https://github.com/maum-ai/nuwave2>
-
-<https://github.com/haoheliu/voicefixer>
-
-<https://github.com/lhwcv/DTLN_pytorch>
-
-<https://github.com/ncarraz/AFILM>
-
-Thanks for all these great work.
+<p><font size='4', face="Arial">Pre-trained HiFiGAN is used as the vocoder.</font></p>
+<p><font size='4', face="Arial">FastSpeech2 can not generate the Mel-spectrogram of breath sounds with adequate quality.</font></p>
+<table class="three-column-table">
+  <tbody>
+    <tr>
+      <th><font size='4' face="Arial"><b>Ground truth</b></font></th>
+      <th><font size='4' face="Arial"><b>FastSpeech2</b></font></th>
+      <th><font size='4' face="Arial"><b>FastSpeech2 w/ proposed</b></font></th>
+    </tr>
+    <tr><td colspan="3"><span><font size='4', face="Arial">1. (speaker id: 14) Isabella corroborated it, my dearest catherine you cannot form an idea of the dirt, come you must go, you cannot refuse going now.</font></span></td></tr>
+    <tr>
+      <td><audio controls="controls"><source src="audio/3_gt_14_208_000042_000000.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/3_origin_14_208_000042_000000.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/3_proposed_14_208_000042_000000.wav"></audio></td>
+    </tr>
+    <tr><td colspan="3"><span><font size='4', face="Arial">2. (speaker id: 850) What side would be likely to prevail in such a conflict, must depend on the means which the contending parties could employ toward insuring success.</font></span></td></tr>
+    <tr>
+      <td><audio controls="controls"><source src="audio/3_gt_850_131004_000020_000001.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/3_origin_850_131004_000020_000001.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/3_proposed_850_131004_000020_000001.wav"></audio></td>
+    </tr>
+  </tbody>
+</table>
