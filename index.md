@@ -6,7 +6,7 @@ layout: default
 
 #### Sample 1
 
-&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp; **UNet + I-DTLN** 
+&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; **UNet + I-DTLN** 
 
 <audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/1.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/1.wav" type="audio/wav"></audio>
 
@@ -20,41 +20,56 @@ layout: default
 
 #### Sample 2
 
-&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**UNet + I-DTLN**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
+&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; **UNet + I-DTLN** 
 
-<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/2.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/2.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/2.wav" type="audio/wav"></audio>
+<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/2.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/2.wav" type="audio/wav"></audio>
 
-&emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
+&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
+
+<audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/2.wav" type="audio/wav"></audio>
+
+ &emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
 
 <audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/2.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/2.wav" type="audio/wav"></audio>
 
 #### Sample 3
 
-&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**UNet + I-DTLN**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
+&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; **UNet + I-DTLN** 
 
-<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/3.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/3.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/3.wav" type="audio/wav"></audio>
+<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/3.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/3.wav" type="audio/wav"></audio>
 
-&emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
+&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
+
+<audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/3.wav" type="audio/wav"></audio>
+
+ &emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
 
 <audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/3.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/3.wav" type="audio/wav"></audio>
 
 #### Sample 4
 
-&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**UNet + I-DTLN**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
+&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; **UNet + I-DTLN** 
 
-<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/4.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/4.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/4.wav" type="audio/wav"></audio>
+<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/4.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/4.wav" type="audio/wav"></audio>
 
-&emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
+&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
+
+<audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/4.wav" type="audio/wav"></audio>
+
+ &emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
 
 <audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/4.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/4.wav" type="audio/wav"></audio>
-
 #### Sample 5
 
-&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**UNet + I-DTLN**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
+&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; **UNet + I-DTLN** 
 
-<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/5.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/5.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/5.wav" type="audio/wav"></audio>
+<audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/5.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/5.wav" type="audio/wav"></audio>
 
-&emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
+&emsp;&emsp;&emsp;&emsp;**VoiceFixer**
+
+<audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/5.wav" type="audio/wav"></audio>
+
+ &emsp;&emsp;&emsp;&emsp;&emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
 
 <audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/5.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/5.wav" type="audio/wav"></audio>
 
