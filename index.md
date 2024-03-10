@@ -6,7 +6,7 @@ layout: default
 
 #### Sample 1
 
-&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp; **UNet + I-DTLN** 
+&emsp;&emsp;&emsp;&emsp;**Noisy(at 8kHz)**&emsp;&emsp;&emsp;&emsp; **UNet + I-DTLN** 
 
 <audio controls="" style="width: 250px; height: 50px"><source src="data/noisy/1.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/predict/UNet+I-DTLN/1.wav" type="audio/wav"></audio>
 
@@ -14,7 +14,7 @@ layout: default
 
 <audio controls="" style="width: 250px; height: 50px"><source src="data/predict/VoiceFixer/1.wav" type="audio/wav"></audio>
 
- &emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
+ &emsp;**Ours**&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Clean(Reference)**
 
 <audio controls="" style="width: 250px; height: 50px"><source src="data/predict/ours/1.wav" type="audio/wav"></audio><audio controls="" style="width: 250px; height: 50px"><source src="data/clean/1.wav" type="audio/wav"></audio>
 
@@ -72,7 +72,7 @@ In this part, we selected some old speech to repair their quality. Some samples 
 
 Spectrogram: 
 
-<img src="img\real_1.png" alt="real_1" style="zoom: 33%;" /><img src="img\real_1_pr.png" alt="real_1_pr" style="zoom: 33%;" />
+<img src="img\real_1.png" alt="real_1" style="zoom: 25%;" /><img src="img\real_1_pr.png" alt="real_1_pr" style="zoom: 25%;" />
 
 ### Sample 2
 
@@ -84,7 +84,7 @@ Spectrogram:
 
 Spectrogram: 
 
-<img src="img\real_8.png" alt="real_8" style="zoom: 33%;" /><img src="img\real_8_pr.png" alt="real_8_pr" style="zoom: 33%;" />
+<img src="img\real_8.png" alt="real_8" style="zoom: 25%;" /><img src="img\real_8_pr.png" alt="real_8_pr" style="zoom: 25%;" />
 
 ### Sample 3
 
@@ -96,5 +96,5 @@ Spectrogram:
 
 Spectrogram:
 
-<img src="img\real_9.png" alt="real_9" style="zoom: 33%;" /><img src="img\real_9_pr.png" alt="real_9_pr" style="zoom: 33%;" />
+<img src="img\real_9.png" alt="real_9" style="zoom: 25%;" /><img src="img\real_9_pr.png" alt="real_9_pr" style="zoom: 25%;" />
 
